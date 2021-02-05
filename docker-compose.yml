@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  nodejs:
+    build: ./nodejs
+    command: sh -c "npm start"
+    environment:
+      - NODE_ENV=development
+      - PORT=7000
+    ports:
+      - "7000:7000"
+    working_dir: /usr/src/app
+    volumes:
+      - ./nodejs:/usr/src/app:cached
+    network_mode: host
+
+  python:
+    build: ./python
+    command: sh -c "python run.py"
+    environment:
+      - PORT=9000
+    ports:
+      - "9000:9000"
+    working_dir: /usr/src/app
+
+    volumes:
+      - ./python:/usr/src/app:cached
+    network_mode: host
