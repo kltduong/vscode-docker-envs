@@ -4,8 +4,8 @@ RUN pip install -U pip
 
 WORKDIR /usr/src/app
 
-COPY ./tools_requirements.txt /usr/src/app/tools_requirements.txt
-RUN pip install -r tools_requirements.txt
+COPY ./requirements.dev.txt /usr/src/requirements.dev.txt
+RUN pip install -r requirements.dev.txt
 
 COPY ./requirements.txt /usr/src/app/requirements.txt
 RUN pip install -r requirements.txt
