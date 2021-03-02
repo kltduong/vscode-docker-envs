@@ -4,7 +4,7 @@ RUN pip install -U pip
 
 WORKDIR /usr/src/app
 
-COPY ./requirements.dev.txt /usr/src/requirements.dev.txt
+COPY ./requirements.dev.txt /usr/src/app/requirements.dev.txt
 RUN pip install -r requirements.dev.txt
 
 COPY ./requirements.txt /usr/src/app/requirements.txt
