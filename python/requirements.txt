@@ -1,3 +1,10 @@
-fastapi
-uvicorn
-requests
+# Fast API
+# fastapi
+# uvicorn
+# requests
+
+# AWS
+boto3
+sagemaker
+pandas
+jupyterlab

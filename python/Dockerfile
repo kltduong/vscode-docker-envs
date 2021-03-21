@@ -1,4 +1,12 @@
-FROM python:3-stretch
+FROM python:latest
+# FROM fnndsc/ubuntu-python3
+
+# RUN apt-get update \
+#   && apt-get install -y curl unzip less
+
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+RUN unzip awscliv2.zip
+RUN ./aws/install
 
 RUN pip install -U pip
 
