@@ -1,8 +1,7 @@
 FROM python:latest
-# FROM fnndsc/ubuntu-python3
+ENV TZ Asia/Ho_Chi_Minh
 
-# RUN apt-get update \
-#   && apt-get install -y curl unzip less
+RUN apt-get update && apt-get -y install git vim
 
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 RUN unzip awscliv2.zip
@@ -19,3 +18,12 @@ COPY ./requirements.txt /usr/src/app/requirements.txt
 RUN pip install -r requirements.txt
 
 COPY . /usr/src/app
+
+# Config GIT
+RUN git config --global user.name "Duong Kieu"
+RUN git config --global user.email "kltduong@gmail.com"
+RUN git config --global core.editor "vim"
+# RUN ssh-keygen -t ed25519 -C "kltduong@gmail.com"
+# RUN eval "$(ssh-agent -s)"
+# RUN ssh-add ~/.ssh/id_ed25519
+# RUN ssh -T git@github.com
