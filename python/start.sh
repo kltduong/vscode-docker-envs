@@ -1,2 +1,2 @@
-cp -r ./.aws /root
-jupyter notebook --allow-root
+sudo cp -r ./.aws /home/vscode/
+jupyter notebook
