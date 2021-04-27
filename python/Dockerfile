@@ -1,4 +1,6 @@
-FROM python:latest
+# [Choice] Python version: 3, 3.9, 3.8, 3.7, 3.6
+ARG VARIANT=3
+FROM mcr.microsoft.com/vscode/devcontainers/python:${VARIANT}
 ENV TZ Asia/Ho_Chi_Minh
 
 RUN apt-get update && apt-get -y install git vim
