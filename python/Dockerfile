@@ -20,9 +20,9 @@ RUN pip install -r requirements.txt
 COPY . /usr/src/app
 
 # Config GIT
-RUN git config --global user.name "Duong Kieu"
-RUN git config --global user.email "kltduong@gmail.com"
-RUN git config --global core.editor "vim"
+# RUN git config --global user.name "Duong Trieu"
+# RUN git config --global user.email "kltduong@gmail.com"
+# RUN git config --global core.editor "vim"
 # RUN ssh-keygen -t ed25519 -C "kltduong@gmail.com"
 # RUN eval "$(ssh-agent -s)"
 # RUN ssh-add ~/.ssh/id_ed25519
