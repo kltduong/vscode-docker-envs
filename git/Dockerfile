@@ -1,6 +1,7 @@
 # [Choice] Ubuntu version: bionic, focal
 ARG VARIANT=focal
 FROM mcr.microsoft.com/vscode/devcontainers/base:${VARIANT}
+ENV TZ Asia/Ho_Chi_Minh
 
 # [Optional] Uncomment this section to install additional OS packages.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
