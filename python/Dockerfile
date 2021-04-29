@@ -3,29 +3,26 @@ ARG VARIANT=3
 FROM mcr.microsoft.com/vscode/devcontainers/python:${VARIANT}
 ENV TZ Asia/Ho_Chi_Minh
 
-RUN apt-get update && apt-get -y install git vim
+# Install python tool libraries
+COPY requirements.tool.txt /tmp/pip-tmp/
+RUN pip --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.tool.txt \
+   && rm -rf /tmp/pip-tmp
 
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-RUN unzip awscliv2.zip
-RUN ./aws/install
+# [Optional] Allow the vscode user to pip install globally w/o sudo
+ENV PIP_TARGET=/usr/local/pip-global
+ENV PYTHONPATH=${PIP_TARGET}:${PYTHONPATH}
+ENV PATH=${PIP_TARGET}/bin:${PATH}
+RUN if ! cat /etc/group | grep -e "^pip-global:" > /dev/null 2>&1; then groupadd -r pip-global; fi \
+    && usermod -a -G pip-global vscode \
+    && umask 0002 && mkdir -p ${PIP_TARGET} \
+    && chown :pip-global ${PIP_TARGET} \
+    && ( [ ! -f "/etc/profile.d/00-restore-env.sh" ] || sed -i -e "s/export PATH=/export PATH=\/usr\/local\/pip-global:/" /etc/profile.d/00-restore-env.sh )
 
-RUN pip install -U pip
+# [Optional] Uncomment this section to install additional OS packages.
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get -y install --no-install-recommends vim
 
-WORKDIR /usr/src/app
-
-COPY ./requirements.dev.txt /usr/src/app/requirements.dev.txt
-RUN pip install -r requirements.dev.txt
-
-COPY ./requirements.txt /usr/src/app/requirements.txt
-RUN pip install -r requirements.txt
-
-COPY . /usr/src/app
-
-# Config GIT
-# RUN git config --global user.name "Duong Trieu"
-# RUN git config --global user.email "kltduong@gmail.com"
-# RUN git config --global core.editor "vim"
-# RUN ssh-keygen -t ed25519 -C "kltduong@gmail.com"
-# RUN eval "$(ssh-agent -s)"
-# RUN ssh-add ~/.ssh/id_ed25519
-# RUN ssh -T git@github.com
+# Install python libraries
+COPY requirements.txt /tmp/pip-tmp/
+RUN pip --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \
+   && rm -rf /tmp/pip-tmp

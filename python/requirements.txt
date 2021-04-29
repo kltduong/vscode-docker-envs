@@ -1,11 +1,9 @@
 # Fast API
-# fastapi
+fastapi[all]
 # uvicorn
 # requests
 
 # AWS
-boto3
-sagemaker
-pandas
-jupyterlab
-jupytext
+# boto3
+# sagemaker
+# pandas

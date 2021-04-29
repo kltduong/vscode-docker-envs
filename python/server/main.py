@@ -1,6 +1,3 @@
-import json
-
-import requests
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -16,8 +13,9 @@ app.add_middleware(
 
 @app.get("/")
 def home():
-    res = requests.get("http://localhost:7000")
-    return {"Python": "success", "healthCheck": json.loads(res.content)}
+    # res = requests.get("http://localhost:7000")
+    # return {"Python": "success", "healthCheck": json.loads(res.content)}
+    return "OK"
 
 
 @app.get("/health-check")
