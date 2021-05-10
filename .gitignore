@@ -3,3 +3,9 @@ node_modules/
 *.pyc
 .directory
 .aws
+
+# Credentials
+git/config
+git/credentials
+git/id_kltd
+git/id_kltd\.pub
