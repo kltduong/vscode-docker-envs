@@ -5,7 +5,4 @@ node_modules/
 .aws
 
 # Credentials
-git/config
-git/credentials
-git/id_kltd
-git/id_kltd\.pub
+git/.cred/
