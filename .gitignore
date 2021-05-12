@@ -6,3 +6,4 @@ node_modules/
 
 # Credentials
 git/.cred/
+aws-bootstrap-kit-examples/
