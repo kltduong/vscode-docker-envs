@@ -6,4 +6,10 @@ node_modules/
 
 # Credentials
 git/.cred/
+
+# Example code
 aws-bootstrap-kit-examples/
+app-runner-fastapi/
+lambda-docker-example/
+lambda-docker-fastapi/
+
