@@ -1,15 +1,17 @@
+# Library
 node_modules/
 .ipynb_checkpoints/
 *.pyc
 .directory
-.aws
 
 # Credentials
-git/.cred/
+.cred/
+.aws/
 
 # Example code
-aws-bootstrap-kit-examples/
-app-runner-fastapi/
-lambda-docker-example/
-lambda-docker-fastapi/
-
+apps/aws-bootstrap-kit-examples/
+apps/app-runner-fastapi/
+apps/lambda-docker-example/
+apps/lambda-docker-fastapi/
+apps/lambda-docker-resnet/
+apps/lambda-docker-fastapi-temp/
