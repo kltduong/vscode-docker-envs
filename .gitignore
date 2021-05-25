@@ -6,7 +6,6 @@ node_modules/
 
 # Credentials
 .cred/
-.aws/
 
 # Example code
 apps/aws-bootstrap-kit-examples/
