@@ -14,3 +14,8 @@ apps/lambda-docker-example/
 apps/lambda-docker-fastapi/
 apps/lambda-docker-resnet/
 apps/lambda-docker-fastapi-temp/
+apps/crafting_td_python/
+
+# temp files
+temp*
+tmp*
