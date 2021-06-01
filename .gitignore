@@ -8,13 +8,7 @@ node_modules/
 .cred/
 
 # Example code
-apps/aws-bootstrap-kit-examples/
-apps/app-runner-fastapi/
-apps/lambda-docker-example/
-apps/lambda-docker-fastapi/
-apps/lambda-docker-resnet/
-apps/lambda-docker-fastapi-temp/
-apps/crafting_td_python/
+apps/
 
 # temp files
 temp*
