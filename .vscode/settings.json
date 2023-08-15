@@ -1,3 +1,10 @@
 {
-  "python.testing.pytestArgs": ["apps/crafting_td_python/chapter_06"]
+  // "python.analysis.extraPaths": ["${workspaceFolder}/backend_apps/shared"], // This is for Pylance
+  "python.envFile": "${workspaceFolder}/.dev.env", // env file for F5 and Pylance and Pylint and some others but NOT for Terminal nor CTRL + F5
+  "python.testing.pytestEnabled": true
+
+  // Make PYTHONPATH available when running in terminal by command or run by (CTRL + F5) or Debug (F5)
+  "terminal.integrated.env.linux": {
+    "PYTHONPATH": "${workspaceFolder}/backend_apps/shared:${workspaceFolder}"
+  }
 }

@@ -1,15 +1,27 @@
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+
 # Library
-node_modules/
+.venv/
 .ipynb_checkpoints/
+node_modules/
+__pycache__/
+
 *.pyc
 .directory
+*.swp
+package-lock.json
+.pytest_cache
+*.egg-info
+
 
 # Credentials
 .cred/
 
 # Example code
-apps/
-
-# temp files
+*buk/
+tmp/
+temp/
 temp*
 tmp*

@@ -2,6 +2,7 @@
   // Use IntelliSense to learn about possible attributes.
   // Hover to view descriptions of existing attributes.
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  // This file is used during debugging (F5)
   "version": "0.2.0",
   "configurations": [
     {
@@ -9,7 +10,10 @@
       "type": "python",
       "request": "launch",
       "program": "${file}",
-      "console": "integratedTerminal"
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      // "envFile": "${workspaceFolder}/.dev.env", // For just debugging, this value overrides the envFile in .vscode/settings.json
+      "cwd": "${fileDirname}" // cd to this dir when debugging
     }
   ]
 }

@@ -1,0 +1,14 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests/" # Path to find the tests
+]
+# Need to install pytest-parallel to use --workers=auto --tests-per-worker=auto
+# To fix error `module 'py' has no attribute 'log'`, install py too
+# https://github.com/kevlened/pytest-parallel/issues/118
+addopts = "--durations=0 --workers=auto --tests-per-worker=auto"
+
+env_files = [".dev.env"] # Need to install pytest-dotenv

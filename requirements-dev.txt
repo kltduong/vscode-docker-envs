@@ -1,0 +1,7 @@
+black  # if not using docker
+ipdb
+pytest
+boto3
+pytest-parallel
+py # Check addopts arg in pyproject.toml for more details
+pytest-dotenv

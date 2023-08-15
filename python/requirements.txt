@@ -1,7 +1,7 @@
 # Fast API
 fastapi[all]
-# uvicorn
-# requests
+uvicorn
+requests
 
 # AWS
 # boto3

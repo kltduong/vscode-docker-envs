@@ -15,7 +15,9 @@ services:
     network_mode: host
 
   python:
-    build: ./python
+    build:
+      context: .
+      dockerfile: Dockerfile
     command: sh -c "python run.py"
     environment:
       - PORT=9000

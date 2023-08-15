@@ -1,3 +1,5 @@
+cp .vimrc ~/.vimrc
+
 cp .cred/.ssh/* ~/.ssh/
 cp -r .cred/.aws ~/.aws/
 
