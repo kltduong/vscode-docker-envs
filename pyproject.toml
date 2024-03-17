@@ -12,3 +12,16 @@ testpaths = [
 addopts = "--durations=0 --workers=auto --tests-per-worker=auto"
 
 env_files = [".dev.env"] # Need to install pytest-dotenv
+
+[tool.black]
+line-length = 120
+target-version = [ "py310" ]
+
+[tool.pylint."messages control"]
+enable = [ "unused-wildcard-import" ]
+disable = [
+  "missing-module-docstring",
+  "missing-class-docstring",
+  "missing-function-docstring"
+]
+max-line-length = 120
